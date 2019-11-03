@@ -1,0 +1,54 @@
+{
+  "name": "tbcrp",
+  "version": "1.0.0",
+  "description": "Tabcopr Test",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "npx jest",
+    "lint": "npx eslint ./src/**/*.ts --fix",
+    "coverage": "npx jest --coverage"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/__tests__/**/*.(ts|js)?(x)",
+      "<rootDir>/__tests__/**/?(*.)(spec|test).(ts|js)?(x)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint",
+      "git add"
+    ]
+  },
+  "author": "Anil Konsal",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chalk": "^2.2.0",
+    "chalk": "^2.4.2",
+    "dotenv": "^8.2.0",
+    "log-update": "^3.3.0",
+    "say-promise": "^0.0.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.20",
+    "@types/node": "^12.11.7",
+    "@typescript-eslint/eslint-plugin": "^2.6.0",
+    "@typescript-eslint/parser": "^2.6.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}
