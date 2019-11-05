@@ -87,21 +87,21 @@ describe('App', (): void => {
         },
       ];
       processTemperatures(beerBoxTemps);
-      expect(global.console.log).toHaveBeenCalledTimes(3);
+      expect(global.console.log).toHaveBeenCalledTimes(5);
       expect(chalk.blue).toHaveBeenCalledTimes(1);
       expect(chalk.red).toHaveBeenCalledTimes(1);
       expect(chalk.green).toHaveBeenCalledTimes(1);
     });
   });
   describe('run', (): void => {
-    it('should ', (): void => {
+    it('should log Temperatures of all the Beer Boxes', (): void => {
       const beerBoxesArr = [
         new BeerBox('Beer-1', { minTemp: 4, maxTemp: 6 }),
         new BeerBox('Beer-2', { minTemp: 5, maxTemp: 6 }),
       ];
 
       run(beerBoxesArr);
-      expect(global.console.log).toHaveBeenCalledTimes(2);
+      expect(global.console.log).toHaveBeenCalledTimes(4);
       expect(chalk.blue).toHaveBeenCalledTimes(2);
       // expect(chalk.red).toHaveBeenCalledTimes(1);
     });

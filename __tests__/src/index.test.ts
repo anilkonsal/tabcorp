@@ -18,7 +18,8 @@ describe('Index', (): void => {
   });
   it('should print', (): void => {
     require('../../src/index');
-    expect(console.log).toHaveBeenCalledTimes(5);
+    expect(console.log).toHaveBeenCalledTimes(7);
+    expect(console.log).toHaveBeenCalledWith('==============================================');
     expect(setInterval).toHaveBeenCalledTimes(1);
   });
 });

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "test": "npx jest",
+    "test": "npx jest --silent",
     "lint": "npx eslint ./src/**/*.ts --fix",
     "coverage": "npx jest --coverage"
   },

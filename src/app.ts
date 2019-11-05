@@ -5,7 +5,7 @@ import chalk from 'chalk';
 const sayp = require('say-promise'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 let belowMinAlts: string[] = [];
-const aboveMaxAlts: string[] = [];
+let aboveMaxAlts: string[] = [];
 
 function getTemperatures(beerBoxes: BeerBox[]): BeerBoxTemp[] {
   const beerBoxesTemps = beerBoxes.map(
@@ -33,18 +33,24 @@ async function sendAlerts(belowMinAlerts: string[], aboveMaxAlerts: string[]): P
 
 function processTemperatures(temperatures: BeerBoxTemp[]): void {
   belowMinAlts = [];
-  belowMinAlts = [];
+  aboveMaxAlts = [];
+  console.log('==============================================');
   temperatures.forEach((beerBoxTemp: BeerBoxTemp) => {
     let color = chalk.green;
     if (beerBoxTemp.temp < beerBoxTemp.minTemp) {
       belowMinAlts.push(beerBoxTemp.name);
       color = chalk.blue;
     } else if (beerBoxTemp.temp > beerBoxTemp.maxTemp) {
-      belowMinAlts.push(beerBoxTemp.name);
+      aboveMaxAlts.push(beerBoxTemp.name);
       color = chalk.red;
     }
-    console.log(`Temperature for ${beerBoxTemp.name}: ${color(`${beerBoxTemp.temp}`)}`);
+    console.log(
+      `Temperature for ${beerBoxTemp.name}: ${color(`${beerBoxTemp.temp}`)} (range ${beerBoxTemp.minTemp}-${
+        beerBoxTemp.maxTemp
+      } ) `,
+    );
   });
+  console.log('==============================================\n\n');
   sendAlerts(belowMinAlts, aboveMaxAlts);
 }
 
