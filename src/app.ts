@@ -53,5 +53,4 @@ function run(beerBoxesArr: BeerBox[]): void {
   processTemperatures(temps);
 }
 
-// Process on start of service
 export { run, processTemperatures, sendAlerts, getTemperatures };
