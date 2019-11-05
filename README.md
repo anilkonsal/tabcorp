@@ -18,6 +18,26 @@ INTERVAL_IN_SECONDS=15
 
 This means that the service will fetch new temperatures after every 15 seconds and speak warnings. `15` seconds is kept to have the warning spoken safely without overlapping.
 
+## How to run?
+
+1. Checkout the code and change to the checked out directory
+2. Run
+
+   ```
+   yarn
+   ```
+
+   or
+
+   ```
+   npm install
+   ```
+
+3. Set value in `.env` file
+4. Set the Volume up of PC/Mac
+5. Run `npm start` for stating the service
+6. For testing, run `npm test`
+
 ## Assumptions
 
 1. The Temperature data will come from a Serial Sensor connected to each beer box
